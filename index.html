@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Funkos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="#">
+                    <img src="/assets/branding/logo_light_horizontal.svg" alt="Logo de FunkShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="#">
+                        SHOP<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                                <path fill="currentColor"
+                                    d="M13.06 16.06a1.5 1.5 0 0 1-2.12 0l-5.658-5.656a1.5 1.5 0 1 1 2.122-2.121L12 12.879l4.596-4.596a1.5 1.5 0 0 1 2.122 2.12l-5.657 5.658Z" />
+                            </g>
+                        </svg>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="pages/shop.html" class="submenu__link">Shop</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Harry Potter</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Pokemon</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="#" class="submenu__link">Star Wars</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/contact.html">
+                        CONTACTO
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/login.html">
+                        LOGIN
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="pages/cart.html">
+                        <img src="/assets/icons/cart-icon.svg" alt="Cart icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <article class="hero__content container">
+            <h3 class="hero__title">Nuevos ingresos</h3>
+            <p class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+            <a class="hero__link" href="pages/shop.html">Shop</a>
+        </article>
+    </section>
+
+    <main class="main container">
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">Star Wars & The Mandalorian</h3>
+                <p class="collection__text">Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                <p class="linea"></p>
+                <a class="collection__link" href="/pages/items.html">VER COLECCION</a>
+            </article>
+            
+            <picture class="collection__cover">
+                <img src="assets/star-wars/baby-yoda-1.webp"
+                    alt="Figura coleccionable Funko de Grogu de la serie Malandorian">
+            </picture>
+        </section>
+
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">POKEMON INDIGO</h3>
+                <p class="collection__text">Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
+                <p class="linea"></p>
+                <a class="collection__link" href="/pages/items.html">VER COLECCION</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="assets/pokemon/vulpix-1.webp" alt="Figura coleccionable Funko de Vulpis de la serie Pokemon">
+            </picture>
+        </section>
+
+        <section class="collection">
+            <article class="collection__content">
+                <h3 class="collection__title">HARRY POTTER</h3>
+                <p class="collection__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
+                <p class="linea"></p>
+                <a class="collection__link" href="/pages/items.html">VER COLECCION</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="assets/harry-potter/snape-patronus-1.webp"
+                    alt="Figura coleccionable Funko de Snape Patronus de la pelicula Harry Potter">
+            </picture>
+        </section>
+
+
+        <section>
+            <h2 class="slider__title">ÚLTIMOS LANZAMIENTOS</h2>
+            <div class="p-3 m-0 border-0 bd-example m-0 border-0">
+                <div id="carouselContainer">
+                    <div id="funkosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner" id="carouselInner">
+                            
+                        </div>
+                        <a class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </a>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                </div> <!--fin del div carouselcontainer-->
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+    <footer class="footer">
+        <nav class="navbar__footer container">
+            <ul class="navbar__footer-ul">
+                <li class="navbar__item-footer">
+                    <a class="navbar__link-footer" href="pages/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item-footer">
+                    <a class="navbar__link-footer" href="pages/login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item-footer">
+                    <a class="navbar__link-footer" href="pages/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="index.html"><img src="/assets/branding/isotype.svg" alt="Icono Fankos"></a>
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+
+    </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/javascript.js"></script>
+</body>
+
+</html>
