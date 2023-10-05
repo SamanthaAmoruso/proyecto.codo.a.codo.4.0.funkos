@@ -172,95 +172,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    
+    function createProductElement(producto) 
+    {
+        const productDiv = document.createElement("div");
+        productDiv.className = "col-md-4";
+        productDiv.innerHTML = `
+        <div class="card">
+            <span class="card-item__span">${producto.nuevo ? 'NUEVO' : ''}</span>
+            <img src="${producto.imagenFront}" alt="${producto.titulo}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-item__licence">${producto.titulo}</h5>
+                <p class="card-item__title">${producto.categoria}</p>
+                <p class="card-item__price">${producto.precio}</p>
+                <p class="card-item__promo">${producto.promo}</p>
+            </div>
+        </div>
+        `;
+    return productDiv;
+    }
     
   
-    const carouselContainer = document.getElementById("carouselContainer");
+    const carouselContainer = document.getElementById("carouselInner");
 
     const carouselDiv = document.createElement("div");
-    carouselDiv.id = "funkosCarousel";
+    carouselDiv.id = "carouselExample";
     carouselDiv.className = "carousel slide";
     carouselDiv.setAttribute("data-bs-ride", "carousel");
-
-    carouselDiv.setAttribute("data-bs-interval", "4000");
-
+  
     const carouselInnerDiv = document.createElement("div");
     carouselInnerDiv.className = "carousel-inner";
-
-    for (let i = 0; i < productos.length; i += 3) 
-    {
-        const carouselItemDiv = document.createElement("div");
-        carouselItemDiv.className = "carousel-item";
-        if (i === 0) 
-        {
-            carouselItemDiv.classList.add("active");
-        }
-
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row";
-
-        for (let j = i; j < i + 3 && j < productos.length; j++) 
-        {
-            const producto = productos[j];
-            const carouselItem = document.createElement("div");
-            carouselItem.className = "col-md-4";
-
-            const content = `
-                <div class="card">
-                    <span class="card-item__span">${producto.nuevo ? 'NUEVO' : ''}</span>
-                    <img src="${producto.imagenFront}" alt="${producto.titulo}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-item__licence">${producto.titulo}</h5>
-                        <p class="card-item__title">${producto.categoria}</p>
-                        <p class="card-item__price">${producto.precio}</p>
-                        <p class="card-item__promo">${producto.promo}</p>
-                    </div>
-                </div>
-            `;
-
-            carouselItem.innerHTML = content;
-            rowDiv.appendChild(carouselItem);
-        }//fin for
-
-        carouselItemDiv.appendChild(rowDiv);
-        carouselInnerDiv.appendChild(carouselItemDiv);
-    }//fin for
-
+  
+    for (let i = 0; i < productos.length; i += 3) {
+      const carouselItemDiv = document.createElement("div");
+      carouselItemDiv.className = "carousel-item";
+      if (i === 0) {
+        carouselItemDiv.classList.add("active");
+      }
+  
+      const rowDiv = document.createElement("div");
+      rowDiv.className = "row";
+  
+      for (let j = i; j < i + 3 && j < productos.length; j++) {
+        const productElement = createProductElement(productos[j]);
+        rowDiv.appendChild(productElement);
+      }
+  
+      carouselItemDiv.appendChild(rowDiv);
+      carouselInnerDiv.appendChild(carouselItemDiv);
+    }
+  
     carouselDiv.appendChild(carouselInnerDiv);
     carouselContainer.appendChild(carouselDiv);
-
-    const prevButton = document.querySelector('.carousel-control-prev');
-    const nextButton = document.querySelector('.carousel-control-next');
-
-    const carousel = new bootstrap.Carousel(document.querySelector('#carouselContainer'));
-
-    prevButton.addEventListener('click', function (e) {
-        e.preventDefault(); 
-        carousel.prev();
-    });
-
-    nextButton.addEventListener('click', function (e) {
-        e.preventDefault(); // Evita que el enlace de la flecha avance
-        carousel.next();
-    });
-
-    carousel.cycle();
-
-
-
-
-
+  
+  
     const cardImages = document.querySelectorAll(".card-img-top");
-
+  
     cardImages.forEach((image) => 
     {
         image.addEventListener("mouseover", function () 
         {
             const index = Array.from(cardImages).indexOf(image);
-
+  
             const imagenBack = new Image();
             imagenBack.src = productos[index].imagenBack;
-
+  
             imagenBack.onload = function () 
             {
             image.src = imagenBack.src;
@@ -268,32 +243,17 @@ document.addEventListener("DOMContentLoaded", function () {
         
         image.style.transform = "scaleX(1)";
         });
-
+  
         image.addEventListener("mouseout", function () 
         {
             const index = Array.from(cardImages).indexOf(image);
             image.src = productos[index].imagenFront;
             image.style.transform = "none";
         });
+    });// fin de carditems
 
-    });
 
-    // Detener el carrusel cuando el usuario interactúa manualmente
-    carouselDiv.addEventListener("slide.bs.carousel", function (e) 
-    {
-        const manualControl = e.relatedTarget.dataset.manual;
-        if (manualControl === "true") 
-        {
-            e.preventDefault();
-        }
-    });
-
-    // Iniciar el carrusel manualmente con un retardo después de la carga de la página
-    setTimeout(function () {
-        const carouselInstance = new bootstrap.Carousel(document.getElementById("funkosCarousel"), {
-            interval: 2000,
-        });
-    }, 500); 
+    
 
 
 
@@ -324,11 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
         collectionCoverImg.src = producto.imagenFront;
     }
 });
-
-
-
-
-
 
 
 

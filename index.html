@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Funkos</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>    
 </head>
 
 <body>
@@ -115,22 +116,20 @@
         <section>
             <h2 class="slider__title">ÚLTIMOS LANZAMIENTOS</h2>
             <div class="p-3 m-0 border-0 bd-example m-0 border-0">
-                <div id="carouselContainer">
-                    <div id="funkosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                        <div class="carousel-inner" id="carouselInner">
-                            
-                        </div>
-                        <a class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </a>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </a>
+                <div id="carouselContainer" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="carouselInner">
+                        <!-- Aquí deberías agregar los elementos del carrusel -->
                     </div>
-                </div> <!--fin del div carouselcontainer-->
-            </div>
+                    <a class="carousel-control-prev" type="button" data-bs-target="#carouselContainer" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" type="button" data-bs-target="#carouselContainer" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </a>
+                </div>
+            </div> <!-- Fin del div carouselContainer -->
         </section>
 
     </main>
@@ -161,7 +160,6 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../scripts/javascript.js"></script>
 </body>
 
