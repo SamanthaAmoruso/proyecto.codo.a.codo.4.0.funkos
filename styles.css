@@ -913,9 +913,8 @@ button[type="submit"]:hover {
     justify-content: space-between;
 }
   
-input[type="text"].error,
-input[type="correo"].error,
-textarea.error {
+#nombre.error , #apellido.error , #telefono.error , #correo.error, #texto.error
+{
     box-shadow: 0 0 10px red;
 }
 
